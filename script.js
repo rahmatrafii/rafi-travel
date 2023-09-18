@@ -103,9 +103,13 @@ function scrollActive() {
     sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector(".nav_menu a[href*=" + sectionId + "]").classList.add("active-link");
+      document
+        .querySelector(".nav_menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
     } else {
-      document.querySelector(".nav_menu a[href*=" + sectionId + "]").classList.remove("active-link");
+      document
+        .querySelector(".nav_menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
     }
   });
 }
@@ -121,14 +125,20 @@ const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
 // We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
-const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line");
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
-  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](iconTheme);
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
+    iconTheme
+  );
 }
 
 // Activate / deactivate the theme manually with the button
@@ -148,10 +158,13 @@ let sr = ScrollReveal({
   reset: true,
 });
 
-sr.reveal(".home_data , .home_social-link, .home_info, .discover_container, .experience_data, .experience_overlay, .place_card, .sponsor_content, .footer_data , .footer_rights", {
-  origin: "top",
-  interval: 100,
-});
+sr.reveal(
+  ".home_data , .home_social-link, .home_info, .discover_container, .experience_data, .experience_overlay, .place_card, .sponsor_content, .footer_data , .footer_rights",
+  {
+    origin: "top",
+    interval: 100,
+  }
+);
 
 sr.reveal(".about_data, .video_description, .subscribe_description", {
   origin: "left",

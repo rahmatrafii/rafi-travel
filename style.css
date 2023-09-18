@@ -486,6 +486,9 @@ input {
 }
 
 /* experience */
+.experience {
+  margin-bottom: 100px;
+}
 .experience_container {
   row-gap: 2.5rem;
   justify-content: center;
